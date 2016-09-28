@@ -1,6 +1,6 @@
-#include "masks.h"
+#include "../masks.h"
 #include "bcm2835gpio.h"
-#include "bcm2835addr.h"
+#include "../bcm2835addr.h"
 
 bcm2835gpio::bcm2835gpio(uint32_t* base_addr)
 {

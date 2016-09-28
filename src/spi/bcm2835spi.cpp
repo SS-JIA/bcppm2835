@@ -1,6 +1,6 @@
-#include "masks.h"
+#include "../masks.h"
 #include "bcm2835spi.h"
-#include "bcm2835addr.h"
+#include "../bcm2835addr.h"
 
 bcm2835spi::bcm2835spi(uint32_t* base_addr)
 {
@@ -14,8 +14,6 @@ void bcm2835spi::spiconfig()
     SETBITA(SPI_CS, CPOL); // Set the Clock to Active High
     SETBITA(SPI_CS, CPHA); // Set SCLK Transition at the middle of the data bit
     SETREGA(SPI_CS, CS, 0x00, V3O0); //Set Chip Select 0
-    /* Configure the pins in AF */
-    spipinsconfig();
 }
 
 void bcm2835spi::spiselect(uint8_t slave) 
